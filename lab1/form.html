@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дизайн интерьера</title>
+</head>
+<body>
+
+    <div id="maincontainer">
+        <h1 title="Заголовок страницы">Дизайн интерьера</h1>
+        <p>На данном сайте вы можете заказать дизайн, оставив ваши контактные данные</p>
+    </div>
+   <table>
+        <caption>Таблица со стилями дизайна</caption>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Разновидность стилей</th>
+                <th>Фото дизайна</th>
+                <th>Краткое описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td><a href="style_skn.html" target="_blank">Скандинавский</a></td>
+                <td><div> <img src="https://ldesign.studio/wp-content/uploads/2020/10/skandinavski-stil-doma4.jpg" alt="Фото дизайна" title="Скандинавский интерьер" width="400" height="300">
+                </div></td>
+                <td>Интерьер в скандинавском стиле выполнен в светлых пастельных тонах, 
+                    имеет небольшое количество декоративных элементов, выполнен из простых 
+                    и натуральных материалов. В сканди часто встречаются, помимо белого, синеватые 
+                    и голубые тона, напоминающие цвет далеких гор, ледников, снега.</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td><a href="style_fut.html" target="_blank">Футуристический</a></td>
+                <td><div> <img src="https://rehouz.info/wp-content/uploads/2017/03/4-4.jpg" alt="Фото дизайна" title="Футуристический интерьер" width="400" height="300">
+                </div></td>
+                <td>Дизайн интерьера предполагает асимметрию и многоуровневые потолки 
+                    сложной конфигурации. Окна, ниши, двери, проемы и мебель отличаются 
+                    необычными геометрическими формами. Цветовая палитра стиля довольно монохромна, 
+                    основу составляют оттенки серого, бежевого, белый и черный цвета. Разнообразить 
+                    оформление помогут яркие акценты: красный, оранжевый, зеленый, синий, фиолетовый</td>
+            </tr>
+            <td>3.</td>
+                <td><a href="style_jpn.html" target="_blank">Японский</a></td>
+                <td><div> <img src="https://rehouz.info/wp-content/uploads/2017/02/1-23.jpg" alt="Фото дизайна" title="Японский интерьер" width="400" height="300">
+                </div></td>
+                <td>В японском интерьере преобладают сдержанные формы и приглушенные цвета. 
+                    Используются также ширмы, чтобы создать личный уголок и при необходимости 
+                    убрать их для создания простора. Материалы натуральные: бамбук, рисовая бумага, 
+                    дерево, керамика, натуральный камень. Фактуры шероховатые, цвета приглушенные, 
+                    основными цветами являются белый, бежевый, коричневый и зеленый оттенки.</td>
+            </tr>
+        </tbody>
+   </table>
+
+<form action="handler.php">
+    <p>Основная цветовая гамма</p>
+    <p><input type="checkbox" name="a" value="white"> Белый</p>
+    <p><input type="checkbox" name="a" value="beige" checked> Бежевый</p>
+    <p><input type="checkbox" name="a" value="blue" checked> Голубой</p>
+    <p><input type="checkbox" name="a" value="black"> Черный</p>
+    <p><input type="checkbox" name="a" value="brown"> Коричневый</p>
+   </form>
+<form action="handler.php">
+    <p><b>Стиль интерьера</b></p>
+     <p><input name="dzen" type="radio" value="skn"> Скандинавский</p>
+     <p><input name="dzen" type="radio" value="fut"> Футуристический</p>
+     <p><input name="dzen" type="radio" value="pdzen" checked> Японский</p>
+   </form> 
+   <form action="/submit" method="post">
+    <label for="username">ФИО заявителя</label>
+<input 
+    type="text"
+    id="username"
+    name="username"
+    required
+    autofocus
+    autocomplete="username"
+    pattern="[A-Za-z]+"
+    title="Только буквы допустимы"
+    maxlength="30"
+    minlength="3"
+    size="20"
+>
+<br>
+<label for="address">Адрес объекта</label>
+<input 
+    type="text"
+    id="address"
+    name="address"
+    required
+    autocomplete="address"
+    pattern="[a-zA-Z0-9,]+"
+    title="Введите корректный адрес"
+    maxlength="30"
+    minlength="3"
+    size="20"
+    >
+<br>
+
+<label for="tel">Телефон</label>
+<input 
+    type="text"
+    id="tel"
+    name="tel"
+    required
+    autocomplete="tel"
+    pattern="[a-zA-Z0-9()+]+"
+    title="Введите корректный телефон"
+    maxlength="30"
+    minlength="3"
+    size="20"
+    >
+<br>
+
+<label for="email">Адрес почты</label>
+<input 
+    type="text"
+    id="email"
+    name="email"
+    required
+    autofocus
+    autocomplete="email"
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z][Z.]"
+    title="Введите корректный e-mail адрес"
+    maxlength="30"
+    minlength="3"
+    size="20"
+    >
+<br>
+
+<label for="formscontacs">Форма взаимодействия</label>
+<select name="Форма взаимодействия">
+    <option value="1">По почте</option>
+    <option value="2">По телефону</option>
+    <option value="3">Другое</option>
+  </select>
+<br>
+<form action="/submit" method="post">
+    <label for="message">Комментарий к заказу</label>
+    <textarea 
+    id="message" 
+    name="message"
+    rows="5"
+    cols="30" 
+    placeholder="Введите ваш комментарий"
+    required
+    maxlength="400"
+    wrap="soft"
+    readonly
+    ></textarea>
+    <br>
+<button type="submit" form="myform">Оформить заказ</button>
+<br>
+<button type="resent" form="myform">Очистить форму</button>
+</form>
+</form>
+</body>
+</html>
