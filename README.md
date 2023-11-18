@@ -1,2 +1,2 @@
 # repo_2023
-https://github.com/krisshovatest/repo_2023/tree/main/lab1
+https://krisshovatest.github.io/repo_2023/lab1/
