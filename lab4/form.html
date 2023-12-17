@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <header>
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Главная страница</title>
@@ -16,7 +16,7 @@
             </ul>
           </nav>
         </div>  
-    </header>
+    </head>
 <body>
 <div class ="flex-container">
     <div id="maincontainer">
@@ -123,12 +123,86 @@
     readonly
     ></textarea>
     <br>
-<button type="submit" form="myform">Оформить заказ</button>
+<button onclick="validateLogin">Оформить заказ</button>
 <br>
 <button type="resent" form="myform">Очистить форму</button>
 </form>
 </form>
 </div>
+<script>
+    function validate_form ()
+    {
+        const username = document.getElementById('username').value;
+        const address = document.getElementById('address').value;
+        const tel = document.getElementById('tel').value;
+        const email = document.getElementById('email').value;
+        
+        valid = true;
+
+        if (document.username.address.tel.email.value == "")
+        {
+            alert ( "Пожалуйста заполните поле!" );
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+<script>
+    function validateTel() {
+        const tel = document.getElementById('tel').value;
+        
+        const telRule = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+        if (valid) output = 'Номер телефона введен правильно!';
+        else output = 'Номер телефона введен неправильно!';
+        document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+'<br/>'+output;
+        return valid;
+    }  
+     
+    
+    function validateEmail() {
+        const email = document.getElementById('email').value;
+        
+        const emailRule = /@.*\./;
+        if (valid) output = 'Электронная почта введена правильно!';
+        else output = 'Электронная почта введена неправильно!';
+        document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+'<br/>'+output;
+        return valid;
+    }    
+   
+    </script>
+
+
+  <div id="cardsContainer"></div>
+  
+  <script>
+    const form = document.querySelector('#myForm');
+    const cardsContainer = document.querySelector('#cardsContainer');
+  
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+  
+      const formData = new FormData(form); 
+      form.reset(); 
+  
+      const card = document.createElement('div'); 
+      card.classList.add('card'); 
+  
+    
+      const name = document.createElement('h3');
+      name.textContent = formData.get('name');
+      const email = document.createElement('p');
+      email.textContent = formData.get('email');
+  
+
+      card.appendChild(name);
+      card.appendChild(email);
+  
+      cardsContainer.appendChild(card); // добавляем карточку в контейнер
+    });
+  </script>
+
+
 </body>
 <footer>
     <div class ="flex-container">

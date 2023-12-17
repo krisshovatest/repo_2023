@@ -19,3 +19,8 @@
     min-width: 50%;
     max-width: 100%;
   }
+
+.flex-container>div {
+    display: flex;
+    gap: 30px calc(10rem - 10px); 
+}  
