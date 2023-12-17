@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Главная страница</title>
+        <div class ="flex-container">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <a href="index.html">
+        <img src="https://i.pinimg.com/originals/a1/ba/d7/a1bad74b30238a3758e9d97411f8a2b4.jpg" alt="Логотип сайта" title="Лого" width="50" height="50">
+        </a>
+        <nav class="menu">
+            <ul>
+              <li><a href="about.html">О нас</a></li>
+              <li><a href="form.html">Форма обратной связи</a></li>
+            </ul>
+          </nav>
+        </div>  
+    </head>
+<body>
+<div class ="flex-container">
+    <div id="maincontainer">
+        <h1 align="center" title="Заголовок страницы">Форма обратной связи</h1>
+        <p>На данном сайте вы можете заказать дизайн, оставив ваши контактные данные</p>
+    </div>
+<form action="handler.php">
+    <p><b>Основная цветовая гамма</b></p>
+    <p><input type="checkbox" name="a" value="white"> Белый</p>
+    <p><input type="checkbox" name="a" value="beige"> Бежевый</p>
+    <p><input type="checkbox" name="a" value="blue"> Голубой</p>
+    <p><input type="checkbox" name="a" value="black"> Черный</p>
+    <p><input type="checkbox" name="a" value="brown"> Коричневый</p>
+   </form>
+<form action="handler.php">
+    <p><b>Стиль интерьера</b></p>
+     <p><input name="style" type="radio" value="skn"> Скандинавский</p>
+     <p><input name="style" type="radio" value="fut"> Футуристический</p>
+     <p><input name="style" type="radio" value="jpn"> Японский</p>
+     <p><input name="style" type="radio" value="jpn"> Лофт</p>
+     <p><input name="style" type="radio" value="jpn"> Хай-тек</p>
+     <p><input name="style" type="radio" value="jpn"> Японский</p> 
+   </form> 
+   <form action="/submit" method="post">
+    <label for="username">ФИО заявителя</label>
+<input 
+    type="text"
+    id="username"
+    name="username"
+    required
+    autofocus
+    autocomplete="username"
+    pattern="[A-Za-z]+"
+    title="Только буквы допустимы"
+    maxlength="30"
+    minlength="3"
+    size="20"
+>
+<br>
+<label for="address">Адрес объекта</label>
+<input 
+    type="text"
+    id="address"
+    name="address"
+    required
+    autocomplete="address"
+    pattern="[a-zA-Z0-9,]+"
+    title="Введите корректный адрес"
+    maxlength="30"
+    minlength="3"
+    size="20"
+    >
+<br>
+
+<label for="tel">Телефон</label>
+<input 
+    type="text"
+    id="tel"
+    name="tel"
+    required
+    autocomplete="tel"
+    pattern="[a-zA-Z0-9()+]+"
+    title="Введите корректный телефон"
+    maxlength="30"
+    minlength="3"
+    size="20"
+    >
+<br>
+
+<label for="email">Адрес почты</label>
+<input 
+    type="text"
+    id="email"
+    name="email"
+    required
+    autofocus
+    autocomplete="email"
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z][Z.]"
+    title="Введите корректный e-mail адрес"
+    maxlength="30"
+    minlength="3"
+    size="20"
+    >
+<br>
+
+<label for="formscontacs">Форма взаимодействия</label>
+<select name="Форма взаимодействия">
+    <option value="1">По почте</option>
+    <option value="2">По телефону</option>
+    <option value="3">Другое</option>
+  </select>
+<br>
+<form action="/submit" method="post">
+    <label for="message">Комментарий к заказу</label>
+    <textarea 
+    id="message" 
+    name="message"
+    rows="5"
+    cols="30" 
+    placeholder="Введите ваш комментарий"
+    required
+    maxlength="400"
+    wrap="soft"
+    readonly
+    ></textarea>
+    <br>
+<button onclick="validateLogin">Оформить заказ</button>
+<br>
+<button type="resent" form="myform">Очистить форму</button>
+</form>
+</form>
+</div>
+<script>
+    function validate_form ()
+    {
+        const username = document.getElementById('username').value;
+        const address = document.getElementById('address').value;
+        const tel = document.getElementById('tel').value;
+        const email = document.getElementById('email').value;
+        
+        valid = true;
+
+        if (document.username.address.tel.email.value == "")
+        {
+            alert ( "Пожалуйста заполните поле!" );
+            valid = false;
+        }
+
+        return valid;
+    }
+</script>
+<script>
+    function validateTel() {
+        const tel = document.getElementById('tel').value;
+        
+        const telRule = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+        if (valid) output = 'Номер телефона введен правильно!';
+        else output = 'Номер телефона введен неправильно!';
+        document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+'<br/>'+output;
+        return valid;
+    }  
+     
+    
+    function validateEmail() {
+        const email = document.getElementById('email').value;
+        
+        const emailRule = /@.*\./;
+        if (valid) output = 'Электронная почта введена правильно!';
+        else output = 'Электронная почта введена неправильно!';
+        document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+'<br/>'+output;
+        return valid;
+    }    
+   
+    </script>
+
+
+  <div id="cardsContainer"></div>
+  
+  <script>
+    const form = document.querySelector('#myForm');
+    const cardsContainer = document.querySelector('#cardsContainer');
+  
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+  
+      const formData = new FormData(form); 
+      form.reset(); 
+  
+      const card = document.createElement('div'); 
+      card.classList.add('card'); 
+  
+    
+      const name = document.createElement('h3');
+      name.textContent = formData.get('name');
+      const email = document.createElement('p');
+      email.textContent = formData.get('email');
+  
+
+      card.appendChild(name);
+      card.appendChild(email);
+  
+      cardsContainer.appendChild(card); // добавляем карточку в контейнер
+    });
+  </script>
+
+
+</body>
+<footer>
+    <div class ="flex-container">
+    <a href="https://miet.ru/">
+        <img src="https://tmsearch.onlinepatent.ru/images/603/6034e691-dd44-4c8c-836f-f00586b770b1.jpg" alt="Логотип МИЭТа" title="Лого МИЭТ" width="50" height="50">
+    </a>
+    <div class="menu">
+        <div class="wrp">
+          <ul>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="form.html">Форма обратной связи</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>  
+</footer>
+</html>

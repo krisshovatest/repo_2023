@@ -1,0 +1,26 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 500 px;
+    border: 1px solid;
+    align-self: center;
+    align-items: flex-start;
+}
+
+.flex-container>div{
+    box-sizing: border-box;
+    padding: 12px 12px;
+    background: rgb(284, 284, 284);
+    border: 1px solid rgb(284, 284, 284);
+    gap: 20px;
+    width: 100px;
+    min-width: 50%;
+    max-width: 100%;
+  }
+
+.flex-container>div {
+    display: flex;
+    gap: 30px calc(10rem - 10px); 
+}  
